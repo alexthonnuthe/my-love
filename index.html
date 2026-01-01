@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f1ec;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #2b2b2b;
+      line-height: 1.8;
+    }
+
+    /* Password Screen */
+    .lock-screen {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lock-box {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+    }
+
+    .lock-box h2 {
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* Letter container */
+    .container {
+      display: none;
+      max-width: 720px;
+      margin: 60px auto;
+      background: #ffffff;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 22px;
+    }
+
+    .signature {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    /* Photo styling */
+    .photo {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 35px;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🎵 Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Password Screen -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-box">
+      <h2>Before you read this</h2>
+      <input type="password" id="password" placeholder="Enter the password">
+      <button onclick="unlock()">Open</button>
+      <p id="error" style="color:red; display:none;">Wrong password.</p>
+    </div>
+  </div>
+
+  <!-- Letter -->
+  <div class="container" id="letter">
+
+    <!-- Photo -->
+    <img src="photo.jpg" alt="Us" class="photo">
+
+    <p>
+      Before you read this, know that every word came from a quiet moment where I missed you.
+    </p>
+
+    <p>
+      Hi, this letter exists because my heart needed somewhere to speak. So, I hope, by the end of this letter, you'll know how much you mean to me, Love.
+    </p>
+
+    <p>
+      It's January 1, 2026, that I'm writing this. Love, we've been saying "I love you" to each other for almost a month now. I started 2026 with your "I love you" and I hope the year ends with us still together and starting another with each others " I love you"
+    </p>
+
+    <p>
+      Kabalo ka nganong love tika? Well, no reasons behind it. I just love you, I won't be tired sa imoha. I hope I have given you an assurance of how faithful I am sa imoha. Love, unta ako ra ang imoha. I am hoping that you have chosen me not because I was the only option you had at the time.
+    </p>
+
+    <p>
+      I was admiring you since August 2025, and it felt so fucking good that you were the one who has been crushing on me first (which I haven't really confirmed) Anyway, Love, I am beyond grateful nga ge hatagan ko nimo ug chance. I am happy nga naa ka, your existence made every step I take within the campus meaningful.
+    </p>
+
+    <p>
+      Love, ayaw kalimti nga you have someone who's thankful and proud to have you. Someone who wouldn't judge you when you show your weakness. Someone who will admire you for life.
+    </p>
+
+    <p>
+      I know I am not worthy enough yo have you, and that I don't deserve you but I wanna contradict fate and be selfish karon. As long as you are still happy with me, I will still hold onto you.
+    </p>
+
+    <div class="signature">
+      <p>
+        I love you, Mi Cielo.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function unlock() {
+      const pass = document.getElementById("password").value;
+      const music = document.getElementById("bgMusic");
+
+      if (pass === "Mi Cielo") {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("letter").style.display = "block";
+
+        music.volume = 0.3;
+        music.play();
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
